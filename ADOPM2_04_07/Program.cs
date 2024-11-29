@@ -76,6 +76,7 @@ namespace ADOPM2_04_07
 
             //Not pattern
             Console.WriteLine(obj is not string);
+            Console.WriteLine(obj is decimal);
             Console.WriteLine();
 
             //Various Pattern Matching
