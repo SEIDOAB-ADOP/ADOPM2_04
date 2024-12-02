@@ -6,8 +6,11 @@ namespace ADOPM2_04_04
     {
         // Tuples works perfect with a method returning multiple values.
         // Here with simple Expression bodied method 
-        static (string, string, decimal) GetFavoriteBook1() =>
-            ("The Count of Monte Cristo", "Alexandre Dumas", 75.25M);
+        static (string, string, decimal) GetFavoriteBook1() {
+
+       
+            return ("The Count of Monte Cristo", "Alexandre Dumas", 75.25M);
+        }
 
         static (string Title, string Author, decimal Price) GetFavoriteBook2() =>
             ("The Count of Monte Cristo", "Alexandre Dumas", 75.25M);
@@ -31,10 +34,21 @@ namespace ADOPM2_04_04
             (string Title, string Author, decimal Price) Book4 = ("Robinson Crusoe", "Daniel Defoe", 150.50M);
             Console.WriteLine(Book4.Title);         // Robinson Crusoe
 
+            (string Title, string Author, decimal Price) = ("Robinson Crusoe", "Daniel Defoe", 150.50M);
+            //string Title = "Robinson Crusoe";
+            //string Author = "Daniel Defoe";
+            //decimal Price = 150M;
+            System.Console.WriteLine(Title);
+            System.Console.WriteLine(Author);
+            System.Console.WriteLine(Price);
+
+
             // All four declarations are equal
             Console.WriteLine(Book1 == Book2); // True
             Console.WriteLine(Book2 == Book3); // True
-            Console.WriteLine(Book3 == Book4); // True
+
+             bool b = (Title, Author, Price) ==  ("Robinson Crusoe", "Daniel Defoe", 150.50M);
+            Console.WriteLine(b); // True
 
             // Set by Method returning tuples
             var FavoriteBook1 = GetFavoriteBook1();
